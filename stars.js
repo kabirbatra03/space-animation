@@ -2,7 +2,7 @@ const canvas3 = document.getElementById('stars');
 const ctx3 = canvas3.getContext('2d');
 canvas3.height = window.innerHeight;
 canvas3.width = window.innerWidth;
-const numOfstars = 500;
+const numOfstars = 150;
 let stars = [];
 
 class Star {
@@ -18,18 +18,36 @@ class Star {
     ctx3.beginPath();
     ctx3.arc(this.x3, this.y3, this.size3, 0, Math.PI * 2);
     ctx3.fillStyle = '#fff';
+    // grad = ctx3.createRadialGradient(
+    //   0,
+    //   0,
+    //   this.size3 * 0.95,
+    //   0,
+    //   0,
+    //   this.size3 * 1.05
+    // );
+    // grad.addColorStop(0, '#333');
+    // grad.addColorStop(0.5, 'white');
+    // grad.addColorStop(1, '#333');
+    // ctx3.strokeStyle = grad;
+    // ctx3.lineWidth = this.size3 * 0.1;
+    // ctx3.stroke();
     ctx3.fill();
   };
 
   update3 = () => {
-    if (this.boolean % 17 == 0) {
-      this.size3 = Math.random() * 2 + 4; //////////////////size3 change ///twinkle
+    if (this.boolean % 13 == 0) {
+      this.size3 = Math.random() * 3 + 1; ///twinkle
+      this.weight3 = Math.random() * 0.2 + 0.1;
     } else if (this.boolean % 7 == 0) {
-      this.size3 = Math.random() * 2 + 3;
-    } else if (this.boolean % 3 == 0) {
       this.size3 = Math.random() * 2 + 2;
+      this.weight3 = Math.random() * 0.3 + 0.2;
+    } else if (this.boolean % 3 == 0) {
+      this.size3 = Math.random() * 2 + 1;
+      this.weight3 = Math.random() * 0.4 + 0.3;
     } else {
-      this.size3 = Math.random() * 1 + 1; //////////////////size3 change ///twinkle
+      this.size3 = Math.random() * 1 + 1; ///twinkle
+      this.weight3 = Math.random() + 0.3;
     }
     this.y3 += this.weight3;
     // this.weight3 += 0.01; //////acceleration
@@ -46,7 +64,7 @@ init3 = () => {
     let x3 = Math.random() * canvas3.width;
     let y3 = Math.random() * canvas3.height;
     let size3 = Math.random() * 10 + 2;
-    let weight3 = 1; //////weight3 is speeddddddd
+    let weight3 = 0.7; //////weight3 is speeddddddd
     let boolean = i;
     stars.push(new Star(x3, y3, size3, weight3, boolean));
   }
