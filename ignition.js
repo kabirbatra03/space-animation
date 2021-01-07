@@ -34,7 +34,7 @@ class Particle {
     //   this.weight = Math.random() * 20 - 0.5;
     // }
     this.size = Math.random() * 5 + 2;
-    this.weight = Math.random() * 15 - 0.5;
+    this.weight = Math.random() * 20 + 5;
     this.y += this.weight;
     // this.weight += 0.00001; //speed
 
