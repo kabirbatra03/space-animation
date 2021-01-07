@@ -46,7 +46,7 @@ init3 = () => {
     let x3 = Math.random() * canvas3.width;
     let y3 = Math.random() * canvas3.height;
     let size3 = Math.random() * 10 + 2;
-    let weight3 = 1; //////weight3 is speeddddddd
+    let weight3 = 0.7; //////weight3 is speeddddddd
     let boolean = i;
     stars.push(new Star(x3, y3, size3, weight3, boolean));
   }
