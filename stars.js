@@ -18,20 +18,8 @@ class Star {
     ctx3.beginPath();
     ctx3.arc(this.x3, this.y3, this.size3, 0, Math.PI * 2);
     ctx3.fillStyle = '#fff';
-    // grad = ctx3.createRadialGradient(
-    //   0,
-    //   0,
-    //   this.size3 * 0.95,
-    //   0,
-    //   0,
-    //   this.size3 * 1.05
-    // );
-    // grad.addColorStop(0, '#333');
-    // grad.addColorStop(0.5, 'white');
-    // grad.addColorStop(1, '#333');
-    // ctx3.strokeStyle = grad;
-    // ctx3.lineWidth = this.size3 * 0.1;
-    // ctx3.stroke();
+    // ctx3.shadowBlur = Math.floor(Math.random() * 10 + 1);
+    // ctx3.shadowColor = 'white';
     ctx3.fill();
   };
 

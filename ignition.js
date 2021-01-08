@@ -4,10 +4,18 @@ const ctx = canvas.getContext('2d');
 let numOfpartlces = 600;
 let particles = [];
 
-setInterval(() => {
-  x = undefined; //canvas.width = undefined and set to false/true using button for start/stop
-  y = undefined;
-}, 200);
+const rocket = document.getElementById('rocket');
+const flame = document.getElementById('ignition');
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth < 800) {
+    rocket.style.bottom = '10%';
+  }
+
+  if (window.innerHeight < 800) {
+    flame.style.bottom = '-10%';
+  }
+});
 
 class Particle {
   constructor(x, y, size, weight) {
@@ -21,25 +29,25 @@ class Particle {
   draw = () => {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fillStyle = 'crimson';
+    const gradient = ctx.createLinearGradient(200, 300, 400, 0);
+    gradient.addColorStop(0, '#f83600');
+    gradient.addColorStop(1, '#F9D423');
+    ctx.fillStyle = gradient;
     ctx.fill();
+    ctx.lineWidth = this.weight;
+    ctx.strokeStyle = '#fff';
+    ctx.stroke();
   };
 
   update = () => {
-    // this.size -= 0.005;
-    // if (this.size < 0) {
-    //   // this.x = mouse.x + Math.random() * 20 - 10;
-    //   // this.y = mouse.y + Math.random() * 20 - 10;
-    //   this.size = Math.random() * 5 + 2;
-    //   this.weight = Math.random() * 20 - 0.5;
-    // }
-    this.size = Math.random() * 5 + 2;
-    this.weight = Math.random() * 20 + 5;
-    this.y += this.weight;
-
-    if (this.y > canvas.height - this.size) {
-      // this.weight *= -1;
+    this.size += 0.1;
+    this.weight -= 0.1;
+    this.y += Math.random() * 15 + 5;
+    if (this.weight < 0) {
+      this.x = 362 + Math.floor((Math.random() * canvas.width) / 9);
       this.y = 0;
+      this.size = Math.random() * 20 + 2;
+      this.weight = Math.random() * 2 + 1;
     }
   };
 }
@@ -47,10 +55,10 @@ class Particle {
 init = () => {
   particles = [];
   for (let i = 0; i < numOfpartlces; i++) {
-    let x = Math.floor((Math.random() * canvas.width) / 8 + 358); // ignition width
+    let x = 362 + Math.floor((Math.random() * canvas.width) / 9);
     let y = 0;
-    let size = Math.random() * 5 + 2;
-    let weight = 1; //speed
+    let size = Math.random() * 20 + 2;
+    let weight = Math.random() * 2 + 1; //speed
     // let color = '#fff';
     particles.push(new Particle(x, y, size, weight));
   }

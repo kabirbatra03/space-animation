@@ -4,71 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      body {
-        padding: 0 auto;
-        margin: 0 auto;
-        background-color: #0e1118;
-        background-image: radial-gradient(
-          ellipse at bottom,
-          #1b2735 0%,
-          #090a0f 100%
-        );
-        /* background-image: linear-gradient(0deg, #004e92, #000428); */
-        /* background-image: radial-gradient(
-          147deg,
-          rgba(15, 13, 58, 1) 0.1%,
-          rgba(10, 14, 42, 1) 100.2%
-        ); */
-      }
-      .rocket {
-        position: absolute;
-        /* height: 400px;
-        width: 400px;
-        z-index: 2;
-        bottom: 15%;
-        left: 36.5%; */
-        bottom: 14%;
-        left: 35.35%;
-        width: 30vw;
-        height: 30vw;
-        z-index: 2;
-        animation: rocketMovement 1s linear infinite;
-      }
-      @keyframes rocketMovement {
-        100% {
-          transform: translateY(-1px);
-        }
-        50% {
-          transform: translateY(1px);
-        }
-        0% {
-          transform: translateY(-1px);
-        }
-      }
-      .space {
-        height: 100vh;
-        width: 100vw;
-        position: relative;
-      }
-      #ignition {
-        position: absolute;
-        bottom: 0%;
-        left: 30%;
-        width: 40vw;
-        height: 23.7vw;
-        z-index: 1;
-        animation: rocketMovement 1s linear infinite;
-      }
-      #stars {
-        position: relative;
-        left: 0%;
-        top: 0%;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-      }
-    </style>
+    <link href="main.css" rel="stylesheet" />
   </head>
   <body>
     <div class="space">
@@ -78,6 +14,7 @@
         height="400"
         width="800"
         class="rocket"
+        id="rocket"
       />
       <canvas id="ignition" width="800" height="400"></canvas>
       <script src="ignition.js"></script>
