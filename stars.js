@@ -29,13 +29,13 @@ class Star {
       this.weight3 = Math.random() * 0.2 + 0.1;
     } else if (this.boolean % 7 == 0) {
       this.size3 = Math.random() * 2 + 2;
-      this.weight3 = Math.random() * 0.3 + 0.2;
+      this.weight3 = Math.random() * 0.3 + 0.5;
     } else if (this.boolean % 3 == 0) {
       this.size3 = Math.random() * 2 + 1;
-      this.weight3 = Math.random() * 0.4 + 0.3;
+      this.weight3 = Math.random() * 0.8 + 0.5;
     } else {
       this.size3 = Math.random() * 1 + 1; ///twinkle
-      this.weight3 = Math.random() + 0.3;
+      this.weight3 = Math.random() + 0.8;
     }
     this.y3 += this.weight3;
     // this.weight3 += 0.01; //////acceleration
