@@ -4,19 +4,6 @@ const ctx = canvas.getContext('2d');
 let numOfpartlces = 600;
 let particles = [];
 
-const rocket = document.getElementById('rocket');
-const flame = document.getElementById('ignition');
-
-window.addEventListener('resize', () => {
-  if (window.innerWidth < 800) {
-    rocket.style.bottom = '10%';
-  }
-
-  if (window.innerHeight < 800) {
-    flame.style.bottom = '-10%';
-  }
-});
-
 class Particle {
   constructor(x, y, size, weight) {
     this.x = x;
@@ -44,7 +31,7 @@ class Particle {
     this.weight -= 0.1;
     this.y += Math.random() * 15 + 5;
     if (this.weight < 0) {
-      this.x = 362 + Math.floor((Math.random() * canvas.width) / 9);
+      this.x = 343 + Math.floor((Math.random() * canvas.width) / 7);
       this.y = 0;
       this.size = Math.random() * 20 + 2;
       this.weight = Math.random() * 2 + 1;
@@ -55,7 +42,7 @@ class Particle {
 init = () => {
   particles = [];
   for (let i = 0; i < numOfpartlces; i++) {
-    let x = 362 + Math.floor((Math.random() * canvas.width) / 9);
+    let x = 335 + Math.floor((Math.random() * canvas.width) / 6);
     let y = 0;
     let size = Math.random() * 20 + 2;
     let weight = Math.random() * 2 + 1; //speed

@@ -25,17 +25,17 @@ class Star {
 
   update3 = () => {
     if (this.boolean % 13 == 0) {
-      this.size3 = Math.random() * 3 + 1; ///twinkle
+      this.size3 = Math.random() * 2.2 + 2; ///twinkle
       this.weight3 = Math.random() * 0.2 + 0.1;
     } else if (this.boolean % 7 == 0) {
-      this.size3 = Math.random() * 2 + 2;
-      this.weight3 = Math.random() * 0.3 + 0.2;
+      this.size3 = Math.random() * 2 + 1.5;
+      this.weight3 = Math.random() * 0.3 + 0.3;
     } else if (this.boolean % 3 == 0) {
-      this.size3 = Math.random() * 2 + 1;
-      this.weight3 = Math.random() * 0.4 + 0.3;
+      this.size3 = Math.random() * 1.5 + 1.5;
+      this.weight3 = Math.random() * 0.5 + 0.5;
     } else {
       this.size3 = Math.random() * 1 + 1; ///twinkle
-      this.weight3 = Math.random() + 0.3;
+      this.weight3 = Math.random() * 0.8 + 0.8;
     }
     this.y3 += this.weight3;
     // this.weight3 += 0.01; //////acceleration
